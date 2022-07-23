@@ -6,12 +6,18 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite" // NOTE: sqlite does not work with NextAuth.js
-    url      = env("DATABASE_URL")
+    provider          = "postgresql" // NOTE: sqlite does not work with NextAuth.js
+    url               = env("DATABASE_URL")
+    shadowDatabaseUrl = env("SHADOW_DATABASE_URL") //Prisma docs show this is needed for heroku db
 }
 
-model Example {
-    id String @id @default(cuid())
+model Loan {
+    id                           String  @id @default(cuid())
+    amount                       Int
+    loanPending                  Boolean @default(true)
+    employerIdentificationNumber String
+    userId                       String
+    user                         User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 // Necessary for Next auth
@@ -49,6 +55,7 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
+    loan          Loan[]
 }
 
 model VerificationToken {

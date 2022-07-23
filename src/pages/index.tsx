@@ -20,6 +20,19 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <header className="flex items-center p-3">
+          <div className="w-1/5 text-3xl text-center">buildercard</div>
+          <nav className="flex w-2/5">
+            <p>Why buildercard</p>
+            <p className="mx-3">How it works</p>
+            <p>About</p>
+          </nav>
+          <div className="flex w-2/5">
+            <div>Sign in</div>
+            <div>Sing up</div>
+          </div>
+        </header>
+
         <section className="bg-builderBlue  p-3 pb-4 pt-10 md:grid md:grid-cols-2">
           <div className="md:m-auto md:h-1/2 md:pl-8">
             <h1 className="font-Playfair text-3xl">
