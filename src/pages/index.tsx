@@ -28,8 +28,10 @@ const Home: NextPage = () => {
             <p>About</p>
           </nav>
           <div className="flex w-2/5">
-            <div>Sign in</div>
-            <div>Sing up</div>
+            <Link href="/api/auth/signin">
+              <a>Sign in</a>
+            </Link>
+            <div>Sign up</div>
           </div>
         </header>
 

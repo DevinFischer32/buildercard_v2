@@ -26,20 +26,28 @@ export const authOptions: NextAuthOptions = {
     }),
     // ...add more providers here
     CredentialsProvider({
-      name: "Credentials",
+      name: "buildercard",
       credentials: {
-        name: {
-          label: "Name",
+        email: {
+          label: "Email",
           type: "text",
-          placeholder: "Enter your name",
+          placeholder: "Enter your email",
+        },
+        password: {
+          label: "Password",
+          type: "text",
+          placeholder: "Enter your password",
         },
       },
       async authorize(credentials, _req) {
-        const user = { id: 1, name: credentials?.name ?? "J Smith" };
+        const user = { id: 1, name: credentials?.email ?? "J Smith" };
         return user;
       },
     }),
   ],
+  pages: {
+    signIn: "/signin",
+  },
 };
 
 export default NextAuth(authOptions);
