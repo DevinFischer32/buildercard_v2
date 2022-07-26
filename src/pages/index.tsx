@@ -9,6 +9,8 @@ import tape from "../../public/Icons/tape.svg";
 
 import Link from "next/link";
 import Image from "next/image";
+import Sidebar from "../Components/sidebar";
+import Footer from "../Components/footer";
 
 const Home: NextPage = () => {
   return (
@@ -20,12 +22,22 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <Sidebar />
+
         <header className="flex items-center p-3">
-          <div className="w-1/5 text-3xl text-center">buildercard</div>
+          <div className="w-1/5 text-3xl text-center" id="home">
+            buildercard
+          </div>
           <nav className="flex w-2/5">
-            <p>Why buildercard</p>
-            <p className="mx-3">How it works</p>
-            <p>About</p>
+            <Link href="#why-buildercard">
+              <a>Why buildercard</a>
+            </Link>
+            <Link href="#how-it-works">
+              <a>How it works</a>
+            </Link>
+            <Link href="#about">
+              <a>About</a>
+            </Link>
           </nav>
           <div className="flex w-2/5">
             <Link href="/api/auth/signin">
@@ -54,7 +66,7 @@ const Home: NextPage = () => {
           <div>{/* <Image src={worker} /> */}</div>
         </section>
 
-        <section className="mt-10 p-3 py-4 md:px-8">
+        <section className="mt-10 p-3 py-4 md:px-8" id="why-buildercard">
           <h1 className="mb-5 font-Playfair text-3xl">Why buildercard?</h1>
           <div className="md:grid md:grid-cols-2">
             <div className="z-10 md:pl-2">
@@ -81,7 +93,7 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className="p-3 py-4 md:p-8">
+        <section className="p-3 py-4 md:p-8" id="how-it-works">
           <h1 className="mb-5 font-Playfair text-3xl">
             How buildercard works:
           </h1>
@@ -119,6 +131,7 @@ const Home: NextPage = () => {
             />
           </div>
         </section>
+        <Footer />
       </main>
     </>
   );
