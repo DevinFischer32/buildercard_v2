@@ -55,7 +55,7 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
-    loan          Loan[]
+    loans         Loan[]
 }
 
 model VerificationToken {
