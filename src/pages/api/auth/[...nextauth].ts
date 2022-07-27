@@ -35,12 +35,12 @@ export const authOptions: NextAuthOptions = {
         },
         password: {
           label: "Password",
-          type: "text",
+          type: "password",
           placeholder: "Enter your password",
         },
       },
       async authorize(credentials, _req) {
-        const user = { id: 1, name: credentials?.email ?? "J Smith" };
+        const user = { id: 1, email: credentials?.email };
         return user;
       },
     }),

@@ -9,8 +9,8 @@ import tape from "../../public/Icons/tape.svg";
 
 import Link from "next/link";
 import Image from "next/image";
-import Sidebar from "../Components/sidebar";
 import Footer from "../Components/footer";
+import Header from "../Components/Headers/header";
 
 const Home: NextPage = () => {
   return (
@@ -22,30 +22,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Sidebar />
-
-        <header className="flex items-center p-3">
-          <div className="w-1/5 text-3xl text-center" id="home">
-            buildercard
-          </div>
-          <nav className="flex w-2/5">
-            <Link href="#why-buildercard">
-              <a>Why buildercard</a>
-            </Link>
-            <Link href="#how-it-works">
-              <a>How it works</a>
-            </Link>
-            <Link href="#about">
-              <a>About</a>
-            </Link>
-          </nav>
-          <div className="flex w-2/5">
-            <Link href="/api/auth/signin">
-              <a>Sign in</a>
-            </Link>
-            <div>Sign up</div>
-          </div>
-        </header>
+        <Header />
 
         <section className="bg-builderBlue  p-3 pb-4 pt-10 md:grid md:grid-cols-2">
           <div className="md:m-auto md:h-1/2 md:pl-8">

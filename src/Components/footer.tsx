@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { useState } from "react";
 
 const Footer = () => {
+  const [secret, setSecret] = useState(false);
   return (
     <footer className="bg-builderGreen p-3 py-4 text-white md:grid md:grid-cols-2 ">
       <section>
-        <Link href="#home">
+        <Link href="/">
           <a className="font-Rampart text-3xl">buildercard</a>
         </Link>
         <p className="my-2 md:w-5/6">
@@ -29,7 +31,16 @@ const Footer = () => {
           <Link href="/invest">
             <a className="py-0.5">Invest</a>
           </Link>
-          <div className=" cursor-default text-builderGreen">secret</div>
+          <div
+            className={
+              secret
+                ? "text-black"
+                : "cursor-default text-builderGreen select-none"
+            }
+            onClick={() => setSecret(!secret)}
+          >
+            You Found Me!
+          </div>
         </div>
         <div className="flex w-max flex-col ">
           <Link href="/support">
